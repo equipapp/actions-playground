@@ -12,8 +12,8 @@ on:
         type: string
         required: true
         options:
-        - staging
-        - release
+          - staging
+          - release
 
 jobs:
   build:
