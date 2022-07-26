@@ -9,11 +9,11 @@ on:
         type: string
       environment:
         description: "Environment to run tests against"
-        type: string
+        type: choice
         required: true
         options:
-          - staging
-          - release
+        - staging
+        - release
 
 jobs:
   build:
