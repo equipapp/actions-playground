@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "The tag to be built"
+        required: true
+        type: string
+      environment:
+        description: "Environment to run tests against"
+        type: choice
+        required: true
+        options:
+        - staging
+        - release
+
+jobs:
+  deploy:
+    uses: equipapp/actions-playground/.github/workflows/test-env.yml@main
+    with:
+      tag: 1.1.0
+      environment: staging
